@@ -1,0 +1,368 @@
+{
+  "label": "experiment_output.json",
+  "seed": 500,
+  "thresholds": {
+    "_status": "PROVISIONAL design parameters; may be revised by held-out experiments",
+    "eps_info_bits": 0.05,
+    "diffuse_pbest_floor": 0.4,
+    "robust_pbest_moderate": 0.7,
+    "robust_pbest_high": 0.5,
+    "robust_rel_gap": 0.25,
+    "tie_pbest": 0.25,
+    "r_min": 0.6
+  },
+  "accept": {
+    "c1_ratio": 0.5,
+    "c2_p90_bits": 0.1,
+    "c3_lo": 0.05,
+    "c3_hi": 0.8,
+    "c4_step": 0.15,
+    "c5_tol": 0.03
+  },
+  "n_contexts": 1000,
+  "status_share": {
+    "ROBUST": 0.568,
+    "NEAR_TIE": 0.371,
+    "INSUFFICIENT_CONFIDENCE": 0.061
+  },
+  "robust_relative_regret": {
+    "mean": 0.09575851431846093,
+    "p90": 0.1675259679601339
+  },
+  "robust_regret_under_EXTREME_stress_bits": {
+    "mean": 0.035135713908495646,
+    "p90": 0.06383884036382678
+  },
+  "nonrobust_relative_regret_mean": 0.22851407915298078,
+  "robust_regret_bits": {
+    "mean": 0.021037762374602573,
+    "p90_across_contexts": 0.04062581324417268
+  },
+  "nonrobust_top_regret_mean_bits": 0.04958907342919267,
+  "near_tie_mean_regret_of_tie_members_bits": 0.061971535888326504,
+  "near_tie_mean_regret_of_nominal_top_bits": 0.05068909576293268,
+  "insufficient_mean_regret_of_nominal_top_bits": 0.04289877366169197,
+  "reason_counts": {
+    "PBEST_MODERATE_BELOW_ROBUST_THRESHOLD": 358,
+    "GAP_BELOW_ROBUST_THRESHOLD": 315,
+    "NO_DOMINANT_OR_TIED_ACTION": 42,
+    "DOMINANT_ACTION": 568,
+    "PBEST_HIGH_BELOW_ROBUST_THRESHOLD": 173,
+    "RANKING_DIFFUSE_UNDER_ASSUMPTION_PERTURBATION": 7,
+    "TOP_EIG_BELOW_MIN_INFORMATIVE": 12
+  },
+  "sensitivity": {
+    "eps_info_bits": [
+      {
+        "value": 0.02,
+        "robust": 0.569,
+        "near_tie": 0.386,
+        "insufficient": 0.045,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.035,
+        "robust": 0.569,
+        "near_tie": 0.381,
+        "insufficient": 0.05,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.05,
+        "robust": 0.568,
+        "near_tie": 0.371,
+        "insufficient": 0.061,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.07,
+        "robust": 0.559,
+        "near_tie": 0.35,
+        "insufficient": 0.091,
+        "robust_p90_regret": 0.0407
+      },
+      {
+        "value": 0.1,
+        "robust": 0.532,
+        "near_tie": 0.305,
+        "insufficient": 0.163,
+        "robust_p90_regret": 0.0411
+      }
+    ],
+    "diffuse_pbest_floor": [
+      {
+        "value": 0.3,
+        "robust": 0.568,
+        "near_tie": 0.378,
+        "insufficient": 0.054,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.35,
+        "robust": 0.568,
+        "near_tie": 0.378,
+        "insufficient": 0.054,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.4,
+        "robust": 0.568,
+        "near_tie": 0.371,
+        "insufficient": 0.061,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.45,
+        "robust": 0.568,
+        "near_tie": 0.354,
+        "insufficient": 0.078,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.5,
+        "robust": 0.568,
+        "near_tie": 0.308,
+        "insufficient": 0.124,
+        "robust_p90_regret": 0.0406
+      }
+    ],
+    "robust_pbest_moderate": [
+      {
+        "value": 0.6,
+        "robust": 0.628,
+        "near_tie": 0.333,
+        "insufficient": 0.039,
+        "robust_p90_regret": 0.0456
+      },
+      {
+        "value": 0.65,
+        "robust": 0.616,
+        "near_tie": 0.342,
+        "insufficient": 0.042,
+        "robust_p90_regret": 0.0449
+      },
+      {
+        "value": 0.7,
+        "robust": 0.568,
+        "near_tie": 0.371,
+        "insufficient": 0.061,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.75,
+        "robust": 0.507,
+        "near_tie": 0.399,
+        "insufficient": 0.094,
+        "robust_p90_regret": 0.0381
+      },
+      {
+        "value": 0.8,
+        "robust": 0.421,
+        "near_tie": 0.399,
+        "insufficient": 0.18,
+        "robust_p90_regret": 0.0301
+      }
+    ],
+    "robust_pbest_high": [
+      {
+        "value": 0.4,
+        "robust": 0.571,
+        "near_tie": 0.371,
+        "insufficient": 0.058,
+        "robust_p90_regret": 0.041
+      },
+      {
+        "value": 0.45,
+        "robust": 0.57,
+        "near_tie": 0.371,
+        "insufficient": 0.059,
+        "robust_p90_regret": 0.0409
+      },
+      {
+        "value": 0.5,
+        "robust": 0.568,
+        "near_tie": 0.371,
+        "insufficient": 0.061,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.55,
+        "robust": 0.551,
+        "near_tie": 0.373,
+        "insufficient": 0.076,
+        "robust_p90_regret": 0.0393
+      },
+      {
+        "value": 0.6,
+        "robust": 0.492,
+        "near_tie": 0.383,
+        "insufficient": 0.125,
+        "robust_p90_regret": 0.0339
+      }
+    ],
+    "robust_rel_gap": [
+      {
+        "value": 0.15,
+        "robust": 0.582,
+        "near_tie": 0.346,
+        "insufficient": 0.072,
+        "robust_p90_regret": 0.0409
+      },
+      {
+        "value": 0.2,
+        "robust": 0.579,
+        "near_tie": 0.354,
+        "insufficient": 0.067,
+        "robust_p90_regret": 0.0409
+      },
+      {
+        "value": 0.25,
+        "robust": 0.568,
+        "near_tie": 0.371,
+        "insufficient": 0.061,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.3,
+        "robust": 0.547,
+        "near_tie": 0.409,
+        "insufficient": 0.044,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.35,
+        "robust": 0.498,
+        "near_tie": 0.462,
+        "insufficient": 0.04,
+        "robust_p90_regret": 0.0376
+      }
+    ],
+    "tie_pbest": [
+      {
+        "value": 0.15,
+        "robust": 0.568,
+        "near_tie": 0.404,
+        "insufficient": 0.028,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.2,
+        "robust": 0.568,
+        "near_tie": 0.393,
+        "insufficient": 0.039,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.25,
+        "robust": 0.568,
+        "near_tie": 0.371,
+        "insufficient": 0.061,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.3,
+        "robust": 0.568,
+        "near_tie": 0.345,
+        "insufficient": 0.087,
+        "robust_p90_regret": 0.0406
+      },
+      {
+        "value": 0.35,
+        "robust": 0.568,
+        "near_tie": 0.317,
+        "insufficient": 0.115,
+        "robust_p90_regret": 0.0406
+      }
+    ]
+  },
+  "reliability_sweep": [
+    {
+      "reliability": 0.55,
+      "robust_rel_regret_mean": 0.1,
+      "gate_off": {
+        "robust": 0.497,
+        "near_tie": 0.316,
+        "insufficient": 0.187,
+        "robust_p90_regret": 0.017,
+        "mean_top_eig": 0.0885
+      },
+      "gate_on": {
+        "robust": 0.0,
+        "near_tie": 0.0,
+        "insufficient": 1.0
+      }
+    },
+    {
+      "reliability": 0.6,
+      "robust_rel_regret_mean": 0.099,
+      "gate_off": {
+        "robust": 0.522,
+        "near_tie": 0.338,
+        "insufficient": 0.14,
+        "robust_p90_regret": 0.0202,
+        "mean_top_eig": 0.1058
+      },
+      "gate_on": {
+        "robust": 0.522,
+        "near_tie": 0.338,
+        "insufficient": 0.14
+      }
+    },
+    {
+      "reliability": 0.65,
+      "robust_rel_regret_mean": 0.099,
+      "gate_off": {
+        "robust": 0.538,
+        "near_tie": 0.354,
+        "insufficient": 0.108,
+        "robust_p90_regret": 0.0238,
+        "mean_top_eig": 0.1248
+      },
+      "gate_on": {
+        "robust": 0.538,
+        "near_tie": 0.354,
+        "insufficient": 0.108
+      }
+    },
+    {
+      "reliability": 0.7,
+      "robust_rel_regret_mean": 0.098,
+      "gate_off": {
+        "robust": 0.551,
+        "near_tie": 0.362,
+        "insufficient": 0.087,
+        "robust_p90_regret": 0.0272,
+        "mean_top_eig": 0.1456
+      },
+      "gate_on": {
+        "robust": 0.551,
+        "near_tie": 0.362,
+        "insufficient": 0.087
+      }
+    },
+    {
+      "reliability": 0.75,
+      "robust_rel_regret_mean": 0.098,
+      "gate_off": {
+        "robust": 0.564,
+        "near_tie": 0.363,
+        "insufficient": 0.073,
+        "robust_p90_regret": 0.0313,
+        "mean_top_eig": 0.1683
+      },
+      "gate_on": {
+        "robust": 0.564,
+        "near_tie": 0.363,
+        "insufficient": 0.073
+      }
+    }
+  ],
+  "c4_max_one_step_robust_shift": 0.086,
+  "acceptance": {
+    "C1": true,
+    "C2": true,
+    "C3": true,
+    "C4": true,
+    "C5": true
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "version": "0.1-dev",
+  "parameter_status": "EXPERT_ELICITED_UNCALIBRATED: every numeric value below (priors, likelihoods, reliabilities, thresholds) is an engineering assumption. Literature supports directions only, not values. Thresholds are provisional design parameters, not scientifically validated.",
+  "states_doc": {
+    "W": "latent investigation state: anomaly is reach-wide or upstream-originating (spatial extent), conditional on the anomaly being representative",
+    "L": "latent investigation state: anomaly source lies between the upstream viewpoint and the report site (spatial extent), conditional on the anomaly being representative",
+    "N": "representativeness/validity state: anomaly not persistent or not representative (artefact OR real-but-brief; the two are not distinguishable here). NOT a cause."
+  },
+  "rain_class_mm": {"dry_below": 2.0, "heavy_from": 10.0},
+  "corroborated_from_reports": 3,
+  "recent_rain_hours": 6,
+  "reference_observer_reliability": 0.90,
+  "priors": {
+    "dry":      {"single": [0.25, 0.40, 0.35], "corroborated": [0.40, 0.42, 0.18]},
+    "moderate": {"single": [0.35, 0.40, 0.25], "corroborated": [0.45, 0.41, 0.14]},
+    "heavy":    {"single": [0.45, 0.40, 0.15], "corroborated": [0.50, 0.40, 0.10]}
+  },
+  "actions": {
+    "upstream_view": {
+      "label": "Look upstream (water clarity upstream of the report site)",
+      "outcomes": ["upstream_turbid", "upstream_not_turbid"],
+      "p_first": {"default": [0.80, 0.10, 0.15]},
+      "base_reliability": 0.90, "sd_scale": 1.5, "effort": "medium",
+      "oah_fields": ["upstream_photo"],
+      "source_class": "extension",
+      "field_status": "EXTENSION_UNVERIFIED: an upstream water-aspect ANSWER is not confirmed as an OAH field; only the upstream photo is documented (secondary source). Treated as AquaForensics extension evidence until the app is checked."
+    },
+    "recheck_60min": {
+      "label": "Re-observe the same site after about 60 minutes",
+      "outcomes": ["still_abnormal", "no_longer_abnormal"],
+      "p_first": {"default": [0.85, 0.75, 0.10], "recent_rain": [0.60, 0.70, 0.10]},
+      "base_reliability": 0.85, "sd_scale": 1.0, "effort": "low (time wait)",
+      "oah_fields": ["water_aspect"],
+      "source_class": "oah",
+      "field_status": "DOCUMENTED_SECONDARY: repeat assessment of water aspect. The 60-minute interval is an AquaForensics protocol, not an OAH rule. OAH answer-code mapping unverified."
+    },
+    "second_downstream": {
+      "label": "Assess a second nearby location",
+      "outcomes": ["abnormal_at_second_site", "normal_at_second_site"],
+      "p_first": {"default": [0.85, 0.70, 0.15]},
+      "base_reliability": 0.80, "sd_scale": 1.0, "effort": "low",
+      "oah_fields": ["user_defined_sampling_location", "water_aspect"],
+      "source_class": "oah",
+      "field_status": "DOCUMENTED_SECONDARY: OAH news item describes user-defined sampling locations and water-condition assessment. Answer-code mapping unverified."
+    },
+    "inspect_pipes_works": {
+      "label": "Check the reach for pipes, sewage or works",
+      "outcomes": ["found", "not_found"],
+      "p_first": {"default": [0.25, 0.70, 0.20]},
+      "base_reliability": 0.60, "sd_scale": 1.0, "effort": "low",
+      "oah_fields": ["polluted_pipes", "sewage", "works"],
+      "source_class": "oah",
+      "field_status": "DOCUMENTED_SECONDARY: native pipe/sewage/works questions. Answer-code mapping unverified."
+    }
+  },
+  "ensemble": {
+    "n_draws": 2000,
+    "reliability_jitter": 0.10,
+    "regimes": {
+      "moderate": {"logit_sd": 0.5, "prior_conc": 30.0},
+      "high":     {"logit_sd": 1.0, "prior_conc": 12.0},
+      "extreme":  {"logit_sd": 1.5, "prior_conc": 6.0, "_note": "STRESS DIAGNOSTIC ONLY; never used for classification"}
+    }
+  },
+  "contradiction_window_min": 15,
+  "thresholds": {
+    "_status": "PROVISIONAL design parameters; may be revised by held-out experiments",
+    "eps_info_bits": 0.05,
+    "diffuse_pbest_floor": 0.40,
+    "robust_pbest_moderate": 0.70,
+    "robust_pbest_high": 0.50,
+    "robust_rel_gap": 0.25,
+    "tie_pbest": 0.25,
+    "r_min": 0.60
+  }
+}
